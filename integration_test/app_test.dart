@@ -27,5 +27,13 @@ void main() {
       // Verify the counter increments by 1.
       expect(find.text('1'), findsOneWidget);
     });
+
+    testWidgets('You shall not pass', (WidgetTester tester) async {
+        // Build our app and trigger a frame.
+        app.main();
+        await tester.pumpAndSettle();
+
+        expect(find.text('no such text'), findsOneWidget); // This will fail
+    });
   });
 }
