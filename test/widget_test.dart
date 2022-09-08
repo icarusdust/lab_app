@@ -21,17 +21,10 @@ void main() {
 
     // Tap the '+' icon and trigger a frame.
     await tester.tap(find.byIcon(Icons.add));
+    await tester.pump();
 
-    for (var i = 1; i <= 10; i++) {
-      await tester.pump();
-      // Verify that our counter has incremented.
-      expect(find.text(i.toString()), findsOneWidget);
-    }
-  });
-
-   testWidgets('You shall not pass', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
-    expect(find.text('no such text'), findsOneWidget); // This will fail
+    // Verify that our counter has incremented.
+    expect(find.text('0'), findsNothing);
+    expect(find.text('1'), findsOneWidget);
   });
 }
