@@ -1,6 +1,7 @@
 workflows:
     ios-ftl-fetch-signing-files:
       name: iOS tests in Firebase Test Lab (fetch signing files)
+      instance_type: mac_mini_m1
       environment:
         xcode: 13.3.1
         groups:
@@ -47,6 +48,7 @@ workflows:
 
     ios-ftl-cm-signing-files:
       name: iOS tests in Firebase Test Lab (CM team signing files)
+      instance_type: mac_mini_m1
       environment:
         xcode: 13.3.1
         groups:
