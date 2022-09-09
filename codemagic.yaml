@@ -17,10 +17,11 @@ workflows:
             gcloud auth activate-service-account --key-file=gcloud_key_file.json
             gcloud --quiet config set project ios-testing-27885
 
-        - script: keychain initialize
-        - script: app-store-connect fetch-signing-files "io.codemagic.flutterIntegrationsTestExample"
-        - script: keychain add-certificates
-        - script: xcode-project use-profiles --code-signing-setup-verbose-logging
+        - keychain initialize
+        - app-store-connect fetch-signing-files "io.codemagic.flutterIntegrationsTestExample"
+        - keychain add-certificates
+        - xcode-project use-profiles --code-signing-setup-verbose-logging
+        - git diff
 
         - name: Build app for testing
           script: |
