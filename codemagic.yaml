@@ -8,7 +8,6 @@ workflows:
           - ios_credentials
           - gcloud_credentials
       scripts:
-        - pip install --upgrade https://github.com/codemagic-ci-cd/cli-tools/archive/refs/heads/bugfix/ios-unit-tests-signing-configuration.zip
         - name: Configure Firebase access
           script: |
             set -e
@@ -60,7 +59,6 @@ workflows:
             - ios_development_cert
 
       scripts:
-        - pip install --upgrade https://github.com/codemagic-ci-cd/cli-tools/archive/refs/heads/bugfix/ios-unit-tests-signing-configuration.zip
         - name: Configure Firebase access
           script: |
             set -e
