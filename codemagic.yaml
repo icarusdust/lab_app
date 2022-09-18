@@ -16,7 +16,7 @@ workflows:
             gcloud --quiet config set project ios-testing-3bbef
 
         - keychain initialize
-        - app-store-connect fetch-signing-files "io.codemagic.flutterIntegrationsTestExample"
+        - app-store-connect fetch-signing-files "io.codemagic.flutterIntegrationsTestExample" --create
         - keychain add-certificates
         - xcode-project use-profiles --code-signing-setup-verbose-logging
 
